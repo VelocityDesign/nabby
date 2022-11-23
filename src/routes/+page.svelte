@@ -8,11 +8,11 @@
         foundData = [];
 
         let formData: any = new FormData(submission.target)
-        await aw.db.listDocuments('637c58ff556d48edadc4', '637ce57b184a499ee385', [ aw.query.search('names', formData.get('searchTerm'))])
+        await aw.db.listDocuments('testing', 'parents', [ aw.query.search('names', formData.get('searchTerm'))])
         .then(function(data){ foundData.push(data) }, function() { return false });
-        await aw.db.listDocuments('637c58ff556d48edadc4', '637ce57b184a499ee385', [ aw.query.search('lastName', formData.get('searchTerm'))])
+        await aw.db.listDocuments('testing', 'parents', [ aw.query.search('lastName', formData.get('searchTerm'))])
         .then(function(data){ foundData.push(data) }, function() { return false });
-        await aw.db.listDocuments('637c58ff556d48edadc4', '637ce57b184a499ee385', [ aw.query.search('parentId',  formData.get('searchTerm'))])
+        await aw.db.listDocuments('testing', 'parents', [ aw.query.search('parentId',  formData.get('searchTerm'))])
         .then(function(data){ foundData.push(data) }, function() { return false });
         
     }
